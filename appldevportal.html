@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Apple Dev Login</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: #f5f5f7;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    .logo {
+      font-size: 64px;
+      margin-bottom: 8px;
+    }
+
+    .dev-rainbow {
+      font-weight: bold;
+      font-size: 28px;
+      background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 40px;
+    }
+
+    .login-box {
+      background-color: white;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      width: 300px;
+      text-align: center;
+    }
+
+    .login-box h2 {
+      margin-bottom: 20px;
+      font-size: 20px;
+      font-weight: 500;
+    }
+
+    input[type="text"], input[type="password"] {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      box-sizing: border-box;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background-color: #0071e3;
+      border: none;
+      color: white;
+      font-weight: 500;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    button:hover {
+      background-color: #005bb5;
+    }
+
+    .top-menu {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 48px;
+      background-color: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(10px);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 20px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+
+    .menu-left, .menu-right {
+      flex: 1;
+    }
+
+    .menu-left {
+      text-align: left;
+    }
+
+    .menu-left a {
+      color: #1d1d1f;
+      text-decoration: none;
+      margin-right: 20px;
+      font-size: 14px;
+    }
+
+    .menu-left a:hover {
+      color: #0071e3;
+    }
+
+    .apple-logo {
+      font-size: 24px;
+    }
+
+    .error-message {
+      color: red;
+      margin-top: 15px;
+      font-weight: 500;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="top-menu">
+    <div class="menu-left">
+      <a href="ios19.html">Home</a>
+      <a href="iphone17.html">iPhone 17</a>
+      <a href="ios19_leaks.html">iOS 19</a>
+    </div>
+    <div class="apple-logo">&#xF8FF;</div>
+    <div class="menu-right"></div>
+  </div>
+  <div class="dev-rainbow" style="text-align: center;">
+    <span style="font-size: 32px; vertical-align: middle;">&#xF8FF;</span>
+    dev
+  </div>
+
+  <div class="login-box">
+    <h2>Sign in with your Apple ID</h2>
+    <input type="text" placeholder="Apple ID">
+    <input type="password" placeholder="Password">
+    <button onclick="showError()">Sign In</button>
+    <div id="error" class="error-message">Failed! Website down</div>
+  </div>
+
+  <script>
+    function showError() {
+      const appleId = document.querySelector('input[type="text"]').value;
+      const password = document.querySelector('input[type="password"]').value;
+      
+      if ((appleId === "LWH" && password === "change me") || 
+          (appleId === "MRA" && password === "ShilohAdams4342")) {
+        window.location.href = 'welcome.html?user=' + encodeURIComponent(appleId);
+      } else {
+        document.getElementById('error').textContent = 'Invalid username or password';
+        document.getElementById('error').style.display = 'block';
+      }
+    }
+  </script>
+</body>
+</html>
+    
